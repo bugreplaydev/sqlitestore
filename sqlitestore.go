@@ -18,7 +18,7 @@ import (
 
 	"github.com/gorilla/securecookie"
 	"github.com/gorilla/sessions"
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/xeodou/go-sqlcipher"
 )
 
 type SqliteStore struct {
@@ -42,7 +42,7 @@ type sessionRow struct {
 }
 
 type DB interface {
-	Exec(query string, args ...interface{}) (sql.Result, error) 
+	Exec(query string, args ...interface{}) (sql.Result, error)
 	Prepare(query string) (*sql.Stmt, error)
 	Close() error
 }
